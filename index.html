@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adith Babu T — AI/ML Engineer</title>
+<meta name="description" content="Portfolio of Adith Babu T — AI/ML fresher building RAG systems and applied ML pipelines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EEF0EA;
+    --panel: #FFFFFF;
+    --ink: #15201C;
+    --muted: #5B6660;
+    --line: #D7DACE;
+    --accent: #2F6F5E;
+    --accent-ink: #FFFFFF;
+    --amber: #C98A2B;
+    --radius: 3px;
+    --max: 880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:var(--accent-ink);}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--amber);
+    display:inline-block;
+    border-radius:1px;
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.2rem, 5vw, 3.4rem);
+    letter-spacing:-0.01em;
+    margin:0 0 14px;
+    line-height:1.05;
+  }
+  .thesis{
+    font-size:1.15rem;
+    color:var(--muted);
+    max-width:58ch;
+    margin:0 0 28px;
+  }
+  .thesis strong{color:var(--ink);font-weight:600;}
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 0;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .contact-row a{color:var(--ink);}
+  .contact-row span.sep{margin:0 12px;color:var(--line);}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .section-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 20px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .section-label .n{color:var(--amber);}
+
+  .summary p{
+    font-size:1.02rem;
+    max-width:70ch;
+    color:var(--ink);
+  }
+
+  /* Projects */
+  .project{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 28px 24px;
+    margin-bottom:22px;
+  }
+  .project:last-child{margin-bottom:0;}
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+  .project-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.25rem;
+    margin:0;
+  }
+  .project-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    white-space:nowrap;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:5px 10px;
+  }
+  .project-link:hover{border-color:var(--accent);border-bottom-color:var(--accent);}
+  .tags{
+    display:flex;flex-wrap:wrap;gap:6px;
+    margin-bottom:18px;
+  }
+  .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:3px 8px;
+  }
+  .project ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .project li{margin-bottom:7px;font-size:0.97rem;}
+  .project li:last-child{margin-bottom:0;}
+
+  /* Pipeline diagram — signature element */
+  .pipeline{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:0;
+    margin:18px 0 22px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+  }
+  .pipeline .step{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:8px 12px;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .pipeline .step.hot{
+    border-color:var(--accent);
+    color:var(--accent);
+    font-weight:500;
+  }
+  .pipeline .arrow{
+    color:var(--muted);
+    padding:0 6px;
+    font-size:14px;
+  }
+
+  /* Experience */
+  .role{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:4px 16px;
+    padding:18px 0;
+    border-top:1px solid var(--line);
+  }
+  .role:first-of-type{border-top:none;}
+  .role-title{font-weight:600;font-size:1.02rem;}
+  .role-org{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    grid-column:1;
+  }
+  .role-dates{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    grid-column:2;
+    text-align:right;
+    white-space:nowrap;
+  }
+  .role ul{grid-column:1 / -1;margin:10px 0 0;padding-left:18px;}
+  .role li{margin-bottom:6px;font-size:0.95rem;}
+
+  /* Skills */
+  .skill-group{margin-bottom:16px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-cat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:8px;
+  }
+  .skill-chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{
+    font-size:13px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:4px 10px;
+  }
+
+  /* Education / Certs */
+  .edu-item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0;border-top:1px solid var(--line);}
+  .edu-item:first-of-type{border-top:none;}
+  .edu-degree{font-weight:600;}
+  .edu-org{font-size:0.92rem;color:var(--muted);grid-column:1;}
+  .edu-dates{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);text-align:right;}
+
+  .certs-line{font-size:0.94rem;color:var(--ink);}
+  .certs-note{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-top:6px;}
+
+  footer{
+    padding:40px 0 60px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width:600px){
+    header.hero{padding:56px 0 40px;}
+    section{padding:40px 0;}
+    .role{grid-template-columns:1fr;}
+    .role-dates{grid-column:1;text-align:left;}
+    .edu-item{grid-template-columns:1fr;}
+    .edu-dates{grid-column:1;text-align:left;}
+    .project-head{flex-direction:column;align-items:flex-start;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">status — open to work</div>
+    <h1>Adith Babu T</h1>
+    <p class="thesis">
+      AI/ML engineer, fresh out of an MSc in AI &amp; Data Science. I build the parts of ML systems that connect
+      data to decisions — <strong>retrieval pipelines, classification models, and the APIs that serve them.</strong>
+    </p>
+    <div class="contact-row">
+      <a href="mailto:adithbabu9503@gmail.com">adithbabu9503@gmail.com</a>
+      <span class="sep">/</span>
+      <span>+91 8593940648</span>
+      <span class="sep">/</span>
+      <a href="https://linkedin.com/in/adithbabut" target="_blank" rel="noopener">linkedin.com/in/adithbabut</a>
+      <span class="sep">/</span>
+      <a href="https://github.com/AdithbabuT" target="_blank" rel="noopener">github.com/AdithbabuT</a>
+      <span class="sep">/</span>
+      <span>Bengaluru, IN</span>
+    </div>
+  </header>
+
+  <section id="summary">
+    <div class="section-label"><span class="n">01</span> Summary</div>
+    <div class="summary">
+      <p>
+        AI/ML fresher (MSc Computer Science — AI, ML &amp; Data Science, Nov 2025) with hands-on project experience
+        building a full-stack Retrieval-Augmented Generation system and supervised ML classification models.
+        Comfortable across the stack: Python, PyTorch, TensorFlow, Scikit-learn, LangChain, FAISS, Flask,
+        and Docker. Looking for an entry-level AI/ML or Generative AI engineering role where I can work on
+        production-grade systems, not just notebooks.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label"><span class="n">02</span> Projects</div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">AI Medical Chatbot — Retrieval-Augmented Generation</h3>
+        <a class="project-link" href="https://github.com/AdithbabuT/Ai-medical-chatbot" target="_blank" rel="noopener">↗ github.com/AdithbabuT/Ai-medical-chatbot</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">FAISS</span>
+        <span class="tag">Hugging Face</span><span class="tag">Flask</span><span class="tag">Streamlit</span><span class="tag">Docker</span>
+      </div>
+
+      <div class="pipeline" aria-label="RAG pipeline: PDF source to chunking to embedding to FAISS index to retrieval to generation">
+        <span class="step">PDF source</span><span class="arrow">→</span>
+        <span class="step">Chunking</span><span class="arrow">→</span>
+        <span class="step hot">Embedding</span><span class="arrow">→</span>
+        <span class="step hot">FAISS index</span><span class="arrow">→</span>
+        <span class="step">Retrieval</span><span class="arrow">→</span>
+        <span class="step">Generation</span>
+      </div>
+
+      <ul>
+        <li>Built an end-to-end RAG pipeline that answers medical queries from PDF knowledge sources — document ingestion, chunking, embedding generation, and semantic retrieval.</li>
+        <li>Implemented semantic search using Hugging Face sentence embeddings indexed in a FAISS vector store to surface the most relevant chunks before generation.</li>
+        <li>Built a Flask REST API backend and a Streamlit frontend for interactive, real-time querying.</li>
+        <li>Containerized the full application with Docker for reproducible deployment across environments.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Breast Cancer Classification Model</h3>
+        <a class="project-link" href="https://github.com/AdithbabuT/Breast-Cancer-Prediction" target="_blank" rel="noopener">↗ github.com/AdithbabuT/Breast-Cancer-Prediction</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Logistic Regression</span>
+      </div>
+      <ul>
+        <li>Built a binary classification model on the Wisconsin Breast Cancer Dataset, with feature scaling and feature selection to improve signal quality.</li>
+        <li>Achieved 95% classification accuracy using Logistic Regression, validated with ROC-AUC, Precision, Recall, and confusion matrix analysis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label"><span class="n">03</span> Internship Experience</div>
+
+    <div class="role">
+      <div class="role-title">AI Engineering Intern</div>
+      <div class="role-dates">2025</div>
+      <div class="role-org">IBM — MSc Academic Collaboration</div>
+      <ul>
+        <li>Built an end-to-end Mental Health Assessment ML pipeline achieving 90% classification accuracy, using GridSearchCV and k-fold cross-validation for hyperparameter tuning and variance reduction.</li>
+        <li>Deployed the trained model via a Flask REST API for real-time inference.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-title">AI Intern (Virtual)</div>
+      <div class="role-dates">Nov 2025 – Jan 2026</div>
+      <div class="role-org">Persevex</div>
+      <ul>
+        <li>Built customer churn prediction models (Logistic Regression, Random Forest, XGBoost) with feature engineering and cross-validated evaluation.</li>
+        <li>Built a Twitter sentiment classifier using TF-IDF vectorization and an LSTM-based text classification model.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-title">AI Intern (Virtual)</div>
+      <div class="role-dates">May 2026 – Jun 2026</div>
+      <div class="role-org">DecodeLabs</div>
+      <ul>
+        <li>Built a rule-based chatbot automating query handling through predefined conversational workflows.</li>
+        <li>Built a similarity-based recommendation engine for personalized content suggestions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label"><span class="n">04</span> Technical Skills</div>
+
+    <div class="skill-group">
+      <div class="skill-cat">Machine Learning</div>
+      <div class="skill-chips">
+        <span class="chip">Regression</span><span class="chip">Classification</span><span class="chip">Cross-Validation</span>
+        <span class="chip">GridSearchCV</span><span class="chip">ROC-AUC</span><span class="chip">Hyperparameter Tuning</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-cat">Generative AI &amp; NLP</div>
+      <div class="skill-chips">
+        <span class="chip">RAG</span><span class="chip">LLMs</span><span class="chip">LangChain</span><span class="chip">LangGraph</span>
+        <span class="chip">Prompt Engineering</span><span class="chip">Vector Embeddings</span><span class="chip">FAISS</span>
+        <span class="chip">TF-IDF</span><span class="chip">LSTM</span><span class="chip">BERT</span><span class="chip">GPT</span>
+        <span class="chip">LLaMA</span><span class="chip">Transformers</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-cat">Frameworks &amp; Libraries</div>
+      <div class="skill-chips">
+        <span class="chip">Scikit-learn</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span>
+        <span class="chip">Keras</span><span class="chip">Hugging Face</span><span class="chip">Pandas</span>
+        <span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-cat">Deployment &amp; Tools</div>
+      <div class="skill-chips">
+        <span class="chip">Azure AI/ML</span><span class="chip">Flask</span><span class="chip">Streamlit</span>
+        <span class="chip">REST APIs</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-label"><span class="n">05</span> Education</div>
+
+    <div class="edu-item">
+      <div class="edu-degree">MSc Computer Science — AI, ML &amp; Data Science</div>
+      <div class="edu-dates">Dec 2023 – Nov 2025</div>
+      <div class="edu-org">Yenepoya (Deemed to be University), Bengaluru</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">BSc Mathematics</div>
+      <div class="edu-dates">Jun 2019 – May 2022</div>
+      <div class="edu-org">Christ College (Autonomous), University of Calicut</div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-label"><span class="n">06</span> Certifications</div>
+    <p class="certs-line">
+      IBM RAG and Agentic AI Professional Certificate · Microsoft AI &amp; ML Engineering Professional Certificate ·
+      Google AI Essentials Specialization · IBM AI Engineering Professional Certificate · IBM Machine Learning Professional Certificate
+    </p>
+    <p class="certs-note">All Coursera, Jul–Sep 2025 · Gold Medal, IBM Academic Collaboration — Data Visualization Project Presentation (2024)</p>
+  </section>
+
+  <footer>
+    <span>Adith Babu T — Bengaluru, India</span>
+    <span><a href="mailto:adithbabu9503@gmail.com">Get in touch →</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
