@@ -126,68 +126,59 @@
         </ul>
       </div>
 
-      <!-- Project 4: Resume Matcher -->
+      <!-- Project 4: Visual Similarity Search API -->
       <div class="project">
         <div class="project-head">
-          <h3 class="project-title">Resume Matcher &amp; Parser — Asynchronous FastAPI</h3>
-          <a class="project-link" href="https://github.com/AdithbabuT/resume_matcher" target="_blank" rel="noopener">↗ View Repository</a>
+          <h3 class="project-title">Visual Similarity Search API — Content-Based Image Retrieval</h3>
+          <a class="project-link" href="https://github.com/AdithbabuT/visual-similarity-search" target="_blank" rel="noopener">↗ View Repository</a>
         </div>
         <div class="tags">
-          <span class="tag">FastAPI</span><span class="tag">pdfplumber</span><span class="tag">AsyncIO</span>
-          <span class="tag">Pydantic</span><span class="tag">Pytest</span>
+          <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span>
+          <span class="tag">FAISS</span><span class="tag">FastAPI</span>
         </div>
         <ul>
-          <li>Designed a high-throughput async document parsing service extracting structured candidate data from PDF resumes.</li>
-          <li>Built job description validation and parsing pipeline with automated Swagger documentation.</li>
+          <li>Built a content-based image search REST API: OpenCV preprocessing feeds a pretrained ResNet50 (PyTorch) to generate 2048-dim embeddings for a 200-image, 5-category catalog.</li>
+          <li>Designed a FAISS vector index (IndexFlatIP over L2-normalized embeddings) for exact cosine-similarity search, returning ranked top-5 matches.</li>
+          <li>FastAPI service (POST /search, GET /health) with full input validation and an automated pytest suite.</li>
         </ul>
       </div>
 
-      <!-- Project 5: Breast Cancer Classification -->
+      <!-- Project 5: MLOps Deployment Pipeline -->
       <div class="project">
         <div class="project-head">
-          <h3 class="project-title">Breast Cancer Diagnostic Classification Benchmark</h3>
+          <h3 class="project-title">MLOps Deployment Pipeline — Breast Cancer Classifier</h3>
           <a class="project-link" href="https://github.com/AdithbabuT/Breast-Cancer-Prediction" target="_blank" rel="noopener">↗ View Repository</a>
         </div>
         <div class="tags">
-          <span class="tag">Scikit-learn</span><span class="tag">Logistic Regression</span><span class="tag">ROC-AUC (0.996)</span>
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">FastAPI</span>
+          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
         </div>
         <ul>
-          <li>Developed diagnostic classification benchmark on Wisconsin FNA biopsy data with 96.5% accuracy and 0.996 ROC-AUC.</li>
+          <li>Logistic Regression classifier, 98.25% test accuracy, evaluated with precision/recall/F1 per class, packaged behind FastAPI (/predict, /health, /metrics).</li>
+          <li>Containerized with Docker; GitHub Actions CI/CD pipeline runs a 14-test suite and publishes to GitHub Container Registry on every push to main.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="experience">
-    <div class="section-label"><span class="n">03</span> Experience &amp; Internships</div>
+  <section id="training">
+    <div class="section-label"><span class="n">03</span> Training &amp; Academic Collaboration</div>
 
     <div class="role">
-      <div class="role-title">AI Engineering Intern</div>
-      <div class="role-dates">2025</div>
-      <div class="role-org">IBM — MSc Academic Collaboration</div>
+      <div class="role-title">IBM — Academic Collaboration (Yenepoya University)</div>
+      <div class="role-dates">Jun 2025 – Aug 2025</div>
       <ul>
-        <li>Engineered student mental health assessment pipeline achieving 90% accuracy with GridSearchCV tuning.</li>
-        <li>Deployed model using Flask REST API for real-time risk assessment.</li>
+        <li>MSc coursework project: engineered student mental health assessment pipeline achieving 90% accuracy with GridSearchCV tuning and k-fold cross-validation.</li>
+        <li>Deployed via Flask REST API for real-time inference.</li>
       </ul>
     </div>
 
     <div class="role">
-      <div class="role-title">AI Intern (Virtual)</div>
+      <div class="role-title">Persevex — Self-Paced AI/ML Training Program</div>
       <div class="role-dates">Nov 2025 – Jan 2026</div>
-      <div class="role-org">Persevex</div>
       <ul>
-        <li>Built customer churn prediction models using Random Forest, XGBoost, and Logistic Regression with cross-validation.</li>
-        <li>Implemented sentiment analysis pipeline with TF-IDF vectorization and deep learning models.</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <div class="role-title">AI Intern (Virtual)</div>
-      <div class="role-dates">May 2026 – Jun 2026</div>
-      <div class="role-org">DecodeLabs</div>
-      <ul>
-        <li>Built conversational rule-based AI chatbot with pattern normalization and intent matching.</li>
-        <li>Developed TF-IDF and Cosine Similarity tech stack recommendation engine.</li>
+        <li>Built customer churn prediction models (Logistic Regression, Random Forest, XGBoost) with feature engineering and cross-validated evaluation.</li>
+        <li>Built a Twitter sentiment classifier using TF-IDF vectorization and an LSTM-based model.</li>
       </ul>
     </div>
   </section>
